@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      # Todo se ejecuta dentro de la carpeta healthtrack/
+      # Todo dentro de healthtrack/
       run:
         working-directory: healthtrack
 
@@ -37,9 +37,9 @@ jobs:
         run: mvn --batch-mode --errors --fail-at-end test
 
       - name: Functional tests (bypass)
-        run: echo "🔶 Bypass de pruebas funcionales — no se ejecutan en este pipeline."
+        run: echo "🔶 Bypass de pruebas funcionales — se compilaron, pero no se ejecutan."
 
       - name: Report summary
         if: ${{ always() }}
         run: |
-          echo "✅ Build and unit tests: ${{ job.status }} • Functional tests: bypassed"
+          echo "✅ Build & unit tests: ${{ job.status }} • Functional tests: bypassed"
