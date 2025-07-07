@@ -20,6 +20,21 @@
   </properties>
 
   <dependencies>
+  ||<!-- Selenium Java -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>4.10.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- WebDriver Manager: descarga automática de drivers -->
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>5.3.2</version>
+      <scope>test</scope>
+    </dependency>
     <!-- JUnit Jupiter API + Engine -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
