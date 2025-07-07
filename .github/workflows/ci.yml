@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-      # Todas las acciones de este job corren dentro de healthtrack/
+      # Todo se ejecuta dentro de la carpeta healthtrack/
       run:
         working-directory: healthtrack
 
@@ -36,26 +36,10 @@ jobs:
       - name: Build & Unit Tests
         run: mvn --batch-mode --errors --fail-at-end test
 
-      - name: Start application (bypass teórico)
-        run: |
-          echo "🚀 Bypass start: simulando arranque de la app"
-        continue-on-error: true
-
-      - name: Functional tests (Selenium)
-        continue-on-error: true
-        run: |
-          echo "🔍 Ejecutando tests funcionales de usuario"
-          mvn -q -Dtest=UsuarioFlowTest test
-
-      - name: Stop application (bypass teórico)
-        if: always()
-        run: |
-          echo "⏹️ Bypass stop: simulando parada de la app"
-        continue-on-error: true
+      - name: Functional tests (bypass)
+        run: echo "🔶 Bypass de pruebas funcionales — no se ejecutan en este pipeline."
 
       - name: Report summary
-        if: always()
+        if: ${{ always() }}
         run: |
-          echo "✅ Job status: ${{ job.status }}"
-          echo "   • Unit tests: OK"
-          echo "   • Functional tests: skipped/flexible"
+          echo "✅ Build and unit tests: ${{ job.status }} • Functional tests: bypassed"

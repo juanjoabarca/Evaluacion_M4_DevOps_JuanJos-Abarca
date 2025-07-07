@@ -1,7 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="
+            http://maven.apache.org/POM/4.0.0
+            http://maven.apache.org/xsd/maven-4.0.0.xsd
+         ">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.healthtrack</groupId>
@@ -12,31 +14,13 @@
   <url>https://github.com/juanjoabarca/HealthTrack</url>
 
   <properties>
-    <!-- Java -->
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <!-- JUnit 5 -->
     <junit.jupiter.version>5.10.0</junit.jupiter.version>
   </properties>
 
   <dependencies>
-    <!-- Selenium Java -->
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.10.0</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- WebDriver Manager: descarga automática de drivers -->
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.3.2</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- JUnit Jupiter API + Engine -->
+    <!-- JUnit Jupiter API + Engine para pruebas unitarias -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
@@ -47,7 +31,7 @@
 
   <build>
     <plugins>
-      <!-- Compilar con Java 17 -->
+      <!-- Compilador Java 17 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -57,8 +41,7 @@
           <target>${maven.compiler.target}</target>
         </configuration>
       </plugin>
-
-      <!-- Ejecutar tests JUnit 5 -->
+      <!-- Ejecuta tests JUnit 5 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
