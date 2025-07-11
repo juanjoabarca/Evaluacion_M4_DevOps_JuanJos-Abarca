@@ -39,7 +39,16 @@ jobs:
       - name: Functional tests (bypass)
         run: echo "🔶 Bypass de pruebas funcionales — se compilaron, pero no se ejecutan."
 
+      - name: Performance test (bypass)
+        run: echo "📉 Bypass de pruebas de rendimiento — entorno teórico, no se ejecuta JMeter."
+
+      - name: Static code analysis (bypass)
+        run: echo "📊 Análisis estático simulado — SonarQube no ejecutado por tratarse de un entorno teórico."
+
       - name: Report summary
         if: ${{ always() }}
         run: |
-          echo "✅ Build & unit tests: ${{ job.status }} • Functional tests: bypassed"
+          echo "🧪 Unit Tests: ${{ job.status }}"
+          echo "🚦 Functional Tests: bypassed"
+          echo "📉 Performance Tests: bypassed"
+          echo "📊 Static Code Analysis: bypassed"
