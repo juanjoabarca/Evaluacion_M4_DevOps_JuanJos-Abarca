@@ -1,8 +1,9 @@
 name: Nightly Regression
 
-on:
-  schedule:
-    - cron: '0 0 * * *'  # Todos los días a las 00:00 UTC
+# Desactivado temporalmente
+# on:
+#   schedule:
+#     - cron: '0 0 * * *'  # Todos los días a las 00:00 UTC
 
 jobs:
   regression-tests:
